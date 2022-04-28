@@ -38,6 +38,8 @@ namespace MyHomeWork
             this.lblMaster = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.label8 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -54,12 +56,15 @@ namespace MyHomeWork
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.ordersBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.nwDataSet11 = new LinqLabs.NWDataSet1();
             this.label2 = new System.Windows.Forms.Label();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.ordersBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.nwDataSet11 = new LinqLabs.NWDataSet1();
             this.ordersTableAdapter1 = new LinqLabs.NWDataSet1TableAdapters.OrdersTableAdapter();
             this.nwDataSet11BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.order_DetailsTableAdapter1 = new LinqLabs.NWDataSet1TableAdapters.Order_DetailsTableAdapter();
+            this.productsTableAdapter1 = new LinqLabs.NWDataSet1TableAdapters.ProductsTableAdapter();
+            this.productsTableAdapter2 = new LinqLabs.NWDataSet1TableAdapters.ProductsTableAdapter();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
@@ -72,9 +77,9 @@ namespace MyHomeWork
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nwDataSet11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nwDataSet11BindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -166,7 +171,7 @@ namespace MyHomeWork
             this.lblMaster.Name = "lblMaster";
             this.lblMaster.Size = new System.Drawing.Size(630, 40);
             this.lblMaster.TabIndex = 101;
-            this.lblMaster.Text = "檔案明細";
+            this.lblMaster.Text = "訂單";
             // 
             // dataGridView1
             // 
@@ -179,6 +184,7 @@ namespace MyHomeWork
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(628, 401);
             this.dataGridView1.TabIndex = 71;
+            
             // 
             // splitContainer1
             // 
@@ -191,6 +197,8 @@ namespace MyHomeWork
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.label8);
+            this.splitContainer1.Panel1.Controls.Add(this.button3);
             this.splitContainer1.Panel1.Controls.Add(this.label7);
             this.splitContainer1.Panel1.Controls.Add(this.label6);
             this.splitContainer1.Panel1.Controls.Add(this.label3);
@@ -215,6 +223,28 @@ namespace MyHomeWork
             this.splitContainer1.SplitterDistance = 341;
             this.splitContainer1.SplitterWidth = 5;
             this.splitContainer1.TabIndex = 136;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.ForeColor = System.Drawing.Color.Red;
+            this.label8.Location = new System.Drawing.Point(59, 313);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(144, 15);
+            this.label8.TabIndex = 139;
+            this.label8.Text = "↓選取訂單取得訂單明細";
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.Silver;
+            this.button3.Location = new System.Drawing.Point(832, 278);
+            this.button3.Margin = new System.Windows.Forms.Padding(5);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(201, 45);
+            this.button3.TabIndex = 138;
+            this.button3.Text = "Show Products";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // label7
             // 
@@ -241,7 +271,7 @@ namespace MyHomeWork
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("新細明體", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label3.Location = new System.Drawing.Point(949, 261);
+            this.label3.Location = new System.Drawing.Point(829, 256);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(219, 14);
@@ -321,9 +351,9 @@ namespace MyHomeWork
             // 
             // button13
             // 
-            this.button13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.button13.BackColor = System.Drawing.Color.Silver;
             this.button13.ForeColor = System.Drawing.Color.Black;
-            this.button13.Location = new System.Drawing.Point(1405, 290);
+            this.button13.Location = new System.Drawing.Point(1338, 278);
             this.button13.Margin = new System.Windows.Forms.Padding(5);
             this.button13.Name = "button13";
             this.button13.Size = new System.Drawing.Size(137, 42);
@@ -342,18 +372,21 @@ namespace MyHomeWork
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(176, 21);
             this.comboBox1.TabIndex = 125;
+            this.comboBox1.Text = "請選擇年份";
+            this.comboBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.comboBox1_MouseDown);
             // 
             // button12
             // 
-            this.button12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.button12.BackColor = System.Drawing.Color.Silver;
             this.button12.ForeColor = System.Drawing.Color.Black;
-            this.button12.Location = new System.Drawing.Point(1256, 290);
+            this.button12.Location = new System.Drawing.Point(1191, 278);
             this.button12.Margin = new System.Windows.Forms.Padding(5);
             this.button12.Name = "button12";
             this.button12.Size = new System.Drawing.Size(137, 42);
             this.button12.TabIndex = 97;
             this.button12.Text = "上一頁";
             this.button12.UseVisualStyleBackColor = false;
+            this.button12.Click += new System.EventHandler(this.button12_Click);
             // 
             // button4
             // 
@@ -371,10 +404,10 @@ namespace MyHomeWork
             // 
             this.textBox1.Font = new System.Drawing.Font("新細明體", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.textBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.textBox1.Location = new System.Drawing.Point(1056, 294);
+            this.textBox1.Location = new System.Drawing.Point(1046, 300);
             this.textBox1.Margin = new System.Windows.Forms.Padding(5);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(180, 23);
+            this.textBox1.Size = new System.Drawing.Size(135, 23);
             this.textBox1.TabIndex = 98;
             this.textBox1.Text = "10";
             // 
@@ -383,12 +416,12 @@ namespace MyHomeWork
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("新細明體", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label1.Location = new System.Drawing.Point(937, 298);
+            this.label1.Location = new System.Drawing.Point(1043, 278);
             this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(67, 14);
+            this.label1.Size = new System.Drawing.Size(138, 14);
             this.label1.TabIndex = 99;
-            this.label1.Text = "一頁幾筆";
+            this.label1.Text = "一頁幾筆(預設10筆)";
             // 
             // label5
             // 
@@ -402,16 +435,6 @@ namespace MyHomeWork
             this.label5.TabIndex = 104;
             this.label5.Text = "LINQ to Northwind DataSet - Orders";
             // 
-            // ordersBindingSource
-            // 
-            this.ordersBindingSource.DataMember = "Orders";
-            this.ordersBindingSource.DataSource = this.nwDataSet11;
-            // 
-            // nwDataSet11
-            // 
-            this.nwDataSet11.DataSetName = "NWDataSet1";
-            this.nwDataSet11.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -424,9 +447,15 @@ namespace MyHomeWork
             this.label2.TabIndex = 135;
             this.label2.Text = "Year:";
             // 
-            // bindingSource1
+            // ordersBindingSource
             // 
-            this.bindingSource1.CurrentChanged += new System.EventHandler(this.bindingSource1_CurrentChanged);
+            this.ordersBindingSource.DataMember = "Orders";
+            this.ordersBindingSource.DataSource = this.nwDataSet11;
+            // 
+            // nwDataSet11
+            // 
+            this.nwDataSet11.DataSetName = "NWDataSet1";
+            this.nwDataSet11.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // ordersTableAdapter1
             // 
@@ -436,6 +465,18 @@ namespace MyHomeWork
             // 
             this.nwDataSet11BindingSource.DataSource = this.nwDataSet11;
             this.nwDataSet11BindingSource.Position = 0;
+            // 
+            // order_DetailsTableAdapter1
+            // 
+            this.order_DetailsTableAdapter1.ClearBeforeFill = true;
+            // 
+            // productsTableAdapter1
+            // 
+            this.productsTableAdapter1.ClearBeforeFill = true;
+            // 
+            // productsTableAdapter2
+            // 
+            this.productsTableAdapter2.ClearBeforeFill = true;
             // 
             // Frm作業_1
             // 
@@ -461,9 +502,9 @@ namespace MyHomeWork
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordersBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nwDataSet11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nwDataSet11BindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -502,5 +543,10 @@ namespace MyHomeWork
         private LinqLabs.NWDataSet1TableAdapters.OrdersTableAdapter ordersTableAdapter1;
         private System.Windows.Forms.BindingSource ordersBindingSource;
         private System.Windows.Forms.BindingSource nwDataSet11BindingSource;
+        private LinqLabs.NWDataSet1TableAdapters.Order_DetailsTableAdapter order_DetailsTableAdapter1;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button button3;
+        private LinqLabs.NWDataSet1TableAdapters.ProductsTableAdapter productsTableAdapter1;
+        private LinqLabs.NWDataSet1TableAdapters.ProductsTableAdapter productsTableAdapter2;
     }
 }

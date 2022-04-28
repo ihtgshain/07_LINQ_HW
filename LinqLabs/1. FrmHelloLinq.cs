@@ -147,10 +147,10 @@ namespace Starter
 
             dataGridView1.DataSource = nwDataSet11.Products.Where(x => !x.IsUnitPriceNull() && x.UnitPrice > 30 && x.ProductName.StartsWith("M")).ToList();
         }
-        //todo 0427 10 Orders
+        //todo 0427 10 Orders and OrderByDescending
         private void button9_Click(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = nwDataSet11.Orders.Where(x => x.OrderDate.Year == 1997 && x.OrderDate.Month>=1 && x.OrderDate.Month <=3).ToList();
+            dataGridView1.DataSource = nwDataSet11.Orders.Where(x => x.OrderDate.Year == 1997 && x.OrderDate.Month>=1 && x.OrderDate.Month <=3).OrderByDescending(x=>x.OrderDate).ToList();
         }
 
         private void button49_Click(object sender, EventArgs e)
