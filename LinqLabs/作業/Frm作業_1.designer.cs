@@ -184,7 +184,6 @@ namespace MyHomeWork
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(628, 401);
             this.dataGridView1.TabIndex = 71;
-            
             // 
             // splitContainer1
             // 
@@ -237,10 +236,10 @@ namespace MyHomeWork
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.Silver;
-            this.button3.Location = new System.Drawing.Point(832, 278);
+            this.button3.Location = new System.Drawing.Point(1025, 278);
             this.button3.Margin = new System.Windows.Forms.Padding(5);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(201, 45);
+            this.button3.Size = new System.Drawing.Size(192, 44);
             this.button3.TabIndex = 138;
             this.button3.Text = "Show Products";
             this.button3.UseVisualStyleBackColor = false;
@@ -271,7 +270,7 @@ namespace MyHomeWork
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("新細明體", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label3.Location = new System.Drawing.Point(829, 256);
+            this.label3.Location = new System.Drawing.Point(1079, 176);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(219, 14);
@@ -356,7 +355,7 @@ namespace MyHomeWork
             this.button13.Location = new System.Drawing.Point(1338, 278);
             this.button13.Margin = new System.Windows.Forms.Padding(5);
             this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(137, 42);
+            this.button13.Size = new System.Drawing.Size(96, 42);
             this.button13.TabIndex = 96;
             this.button13.Text = "下一頁";
             this.button13.UseVisualStyleBackColor = false;
@@ -379,10 +378,10 @@ namespace MyHomeWork
             // 
             this.button12.BackColor = System.Drawing.Color.Silver;
             this.button12.ForeColor = System.Drawing.Color.Black;
-            this.button12.Location = new System.Drawing.Point(1191, 278);
+            this.button12.Location = new System.Drawing.Point(1236, 278);
             this.button12.Margin = new System.Windows.Forms.Padding(5);
             this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(137, 42);
+            this.button12.Size = new System.Drawing.Size(92, 42);
             this.button12.TabIndex = 97;
             this.button12.Text = "上一頁";
             this.button12.UseVisualStyleBackColor = false;
@@ -404,7 +403,7 @@ namespace MyHomeWork
             // 
             this.textBox1.Font = new System.Drawing.Font("新細明體", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.textBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.textBox1.Location = new System.Drawing.Point(1046, 300);
+            this.textBox1.Location = new System.Drawing.Point(880, 299);
             this.textBox1.Margin = new System.Windows.Forms.Padding(5);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(135, 23);
@@ -416,7 +415,7 @@ namespace MyHomeWork
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("新細明體", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label1.Location = new System.Drawing.Point(1043, 278);
+            this.label1.Location = new System.Drawing.Point(877, 280);
             this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(138, 14);

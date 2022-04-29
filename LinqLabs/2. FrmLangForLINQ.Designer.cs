@@ -60,9 +60,14 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.button8 = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.button9 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.button9 = new System.Windows.Forms.Button();
+            this.button10 = new System.Windows.Forms.Button();
+            this.nwDataSet11 = new LinqLabs.NWDataSet1();
+            this.productsTableAdapter1 = new LinqLabs.NWDataSet1TableAdapters.ProductsTableAdapter();
+            this.order_DetailsTableAdapter1 = new LinqLabs.NWDataSet1TableAdapters.Order_DetailsTableAdapter();
+            this.ordersTableAdapter1 = new LinqLabs.NWDataSet1TableAdapters.OrdersTableAdapter();
             this.groupBox5.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
@@ -86,6 +91,7 @@
             this.splitContainer1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nwDataSet11)).BeginInit();
             this.SuspendLayout();
             // 
             // button5
@@ -203,6 +209,7 @@
             this.button45.TabIndex = 38;
             this.button45.Text = "Var (隱含型別區域變數)";
             this.button45.UseVisualStyleBackColor = false;
+            this.button45.Click += new System.EventHandler(this.button45_Click);
             // 
             // button43
             // 
@@ -216,6 +223,7 @@
             this.button43.TabIndex = 40;
             this.button43.Text = "匿名型別 Anonymouse type";
             this.button43.UseVisualStyleBackColor = false;
+            this.button43.Click += new System.EventHandler(this.button43_Click);
             // 
             // button41
             // 
@@ -229,6 +237,7 @@
             this.button41.TabIndex = 42;
             this.button41.Text = "物件初始化 (Object Initializer) / 集合初始化 ";
             this.button41.UseVisualStyleBackColor = false;
+            this.button41.Click += new System.EventHandler(this.button41_Click);
             // 
             // button40
             // 
@@ -242,18 +251,20 @@
             this.button40.TabIndex = 43;
             this.button40.Text = "隱含匿名型別陣列";
             this.button40.UseVisualStyleBackColor = false;
+            this.button40.Click += new System.EventHandler(this.button40_Click);
             // 
             // button3
             // 
             this.button3.AutoSize = true;
             this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.button3.Location = new System.Drawing.Point(697, 95);
+            this.button3.Location = new System.Drawing.Point(704, 92);
             this.button3.Margin = new System.Windows.Forms.Padding(5);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(348, 56);
             this.button3.TabIndex = 48;
             this.button3.Text = "從 Linq 實作 看 C# 3.0 ";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button39
             // 
@@ -302,6 +313,7 @@
             this.button32.TabIndex = 20;
             this.button32.Text = "擴充方法";
             this.button32.UseVisualStyleBackColor = true;
+            this.button32.Click += new System.EventHandler(this.button32_Click);
             // 
             // groupBox1
             // 
@@ -452,6 +464,7 @@
             this.button13.TabIndex = 12;
             this.button13.Text = "C# 2.0公開能逐一查看集合內容的列舉值 - Yield Return";
             this.button13.UseVisualStyleBackColor = false;
+            this.button13.Click += new System.EventHandler(this.button13_Click);
             // 
             // splitContainer1
             // 
@@ -517,6 +530,7 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.button10);
             this.groupBox4.Controls.Add(this.button9);
             this.groupBox4.Controls.Add(this.button2);
             this.groupBox4.Controls.Add(this.buttonX);
@@ -528,6 +542,18 @@
             this.groupBox4.TabIndex = 62;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Delegate (委派)";
+            // 
+            // button9
+            // 
+            this.button9.AutoSize = true;
+            this.button9.Location = new System.Drawing.Point(617, 39);
+            this.button9.Margin = new System.Windows.Forms.Padding(5);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(159, 51);
+            this.button9.TabIndex = 52;
+            this.button9.Text = "Test int";
+            this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // button2
             // 
@@ -552,17 +578,34 @@
             this.label1.Size = new System.Drawing.Size(1014, 18);
             this.label1.TabIndex = 46;
             // 
-            // button9
+            // button10
             // 
-            this.button9.AutoSize = true;
-            this.button9.Location = new System.Drawing.Point(617, 39);
-            this.button9.Margin = new System.Windows.Forms.Padding(5);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(159, 51);
-            this.button9.TabIndex = 52;
-            this.button9.Text = "Test int";
-            this.button9.UseVisualStyleBackColor = true;
-            this.button9.Click += new System.EventHandler(this.button9_Click);
+            this.button10.AutoSize = true;
+            this.button10.Location = new System.Drawing.Point(823, 39);
+            this.button10.Margin = new System.Windows.Forms.Padding(5);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(159, 51);
+            this.button10.TabIndex = 53;
+            this.button10.Text = "Test List";
+            this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
+            // 
+            // nwDataSet11
+            // 
+            this.nwDataSet11.DataSetName = "NWDataSet1";
+            this.nwDataSet11.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // productsTableAdapter1
+            // 
+            this.productsTableAdapter1.ClearBeforeFill = true;
+            // 
+            // order_DetailsTableAdapter1
+            // 
+            this.order_DetailsTableAdapter1.ClearBeforeFill = true;
+            // 
+            // ordersTableAdapter1
+            // 
+            this.ordersTableAdapter1.ClearBeforeFill = true;
             // 
             // FrmLangForLINQ
             // 
@@ -603,6 +646,7 @@
             this.groupBox3.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nwDataSet11)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -644,5 +688,10 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button button10;
+        private LinqLabs.NWDataSet1 nwDataSet11;
+        private LinqLabs.NWDataSet1TableAdapters.ProductsTableAdapter productsTableAdapter1;
+        private LinqLabs.NWDataSet1TableAdapters.Order_DetailsTableAdapter order_DetailsTableAdapter1;
+        private LinqLabs.NWDataSet1TableAdapters.OrdersTableAdapter ordersTableAdapter1;
     }
 }

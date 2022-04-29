@@ -59,6 +59,10 @@ namespace MyHomeWork
             }
         }
 
+        private void comboBox1_MouseDown(object sender, MouseEventArgs e)
+        {
+            comboBox1.DataSource = nwDataSet11.Orders.Select(x => x.OrderDate.Year).Distinct().ToArray();
+        }
 
         private void button14_Click(object sender, EventArgs e)
         {
@@ -105,6 +109,7 @@ namespace MyHomeWork
             lblDetails.Text = "產品";
             count = nwDataSet11.Products.Rows.Count;
             button12.Enabled = button13.Enabled = true;
+
         }
 
         private void button12_Click(object sender, EventArgs e)
@@ -129,9 +134,6 @@ namespace MyHomeWork
             if (current + page >= count) current = count - page - 1;
         }
 
-        private void comboBox1_MouseDown(object sender, MouseEventArgs e)
-        {
-            comboBox1.DataSource = nwDataSet11.Orders.Select(x => x.OrderDate.Year).Distinct().ToArray();
-        }
+
     }
 }
