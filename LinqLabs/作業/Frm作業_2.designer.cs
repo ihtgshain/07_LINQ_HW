@@ -41,7 +41,6 @@ namespace MyHomeWork
             this.label10 = new System.Windows.Forms.Label();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -74,7 +73,6 @@ namespace MyHomeWork
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.aWdataSet1)).BeginInit();
             this.SuspendLayout();
@@ -212,7 +210,6 @@ namespace MyHomeWork
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.dataGridView2);
             this.splitContainer1.Panel1.Controls.Add(this.textBox1);
             this.splitContainer1.Panel1.Controls.Add(this.label2);
             this.splitContainer1.Panel1.Controls.Add(this.label1);
@@ -237,15 +234,6 @@ namespace MyHomeWork
             this.splitContainer1.SplitterDistance = 299;
             this.splitContainer1.SplitterWidth = 5;
             this.splitContainer1.TabIndex = 135;
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(494, 23);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(637, 272);
-            this.dataGridView2.TabIndex = 140;
             // 
             // textBox1
             // 
@@ -441,7 +429,6 @@ namespace MyHomeWork
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.aWdataSet1)).EndInit();
             this.ResumeLayout(false);
@@ -480,6 +467,5 @@ namespace MyHomeWork
         private System.Windows.Forms.TextBox textBox1;
         private LinqLabs.AWdataSetTableAdapters.Product1TableAdapter product1TableAdapter1;
         private LinqLabs.AWdataSetTableAdapters.IDtoPhotoTableAdapter iDtoPhotoTableAdapter1;
-        private System.Windows.Forms.DataGridView dataGridView2;
     }
 }

@@ -20,14 +20,14 @@ namespace MyHomeWork
         }   
 
         private void Initialization()
-        {   //↓ omit columns with "allow null" property
-            product1TableAdapter1.Fill(aWdataSet1.Product1);
+        {   
+            product1TableAdapter1.Fill(aWdataSet1.Product1);//omit columns with "allow null" property
+            iDtoPhotoTableAdapter1.Fill(aWdataSet1.IDtoPhoto);
             var q = aWdataSet1.Product1.Select(x => x.SellStartDate);
             comboBox3.DataSource = q.Select(x=>x.Year).Distinct().ToList();
             comboBox2.DataSource = q.Select(x =>x.SDTMonthStr()).Distinct().ToList();
             dateTimePicker1.Value = q.Min();
             dateTimePicker2.Value = q.Max();
-            iDtoPhotoTableAdapter1.Fill(aWdataSet1.IDtoPhoto);
         }
 
         private void button11_Click(object sender, EventArgs e)
@@ -40,15 +40,15 @@ namespace MyHomeWork
         {
             DateTime start = dateTimePicker1.Value < dateTimePicker2.Value ? dateTimePicker1.Value : dateTimePicker2.Value;
             DateTime end = dateTimePicker1.Value > dateTimePicker2.Value ? dateTimePicker1.Value : dateTimePicker2.Value;
-            var q= aWdataSet1.Product1.Where(x => x.SellStartDate >= start && x.SellStartDate <= end);
-            dataGridView1.DataSource = q.ToList();
+            var q= aWdataSet1.Product1.Where(x => x.SellStartDate >= start && x.SellStartDate <= end).ToList();
+            dataGridView1.DataSource = q;
             textBox1.Text = q.Count().SCountStr();
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            var q = aWdataSet1.Product1.Where(x => x.SellStartDate.Year.ToString() == comboBox3.Text);
-            dataGridView1.DataSource = q.ToList();
+            var q = aWdataSet1.Product1.Where(x => x.SellStartDate.Year.ToString() == comboBox3.Text).ToList();
+            dataGridView1.DataSource = q;
             textBox1.Text = q.Count().SCountStr();
         }
 
@@ -56,8 +56,8 @@ namespace MyHomeWork
         {
             var q = aWdataSet1.Product1.
                 Where(x => x.SellStartDate.Year.ToString() == comboBox3.Text 
-                      && (x.SellStartDate.Month/4+1).ToString()==comboBox2.Text.Substring(1,1));
-            dataGridView1.DataSource = q.ToList();
+                      && (x.SellStartDate.Month/4+1).ToString()==comboBox2.Text.Substring(1,1)).ToList();
+            dataGridView1.DataSource = q;
             textBox1.Text = q.Count().SCountStr();
         }
 
@@ -67,11 +67,6 @@ namespace MyHomeWork
             var q = aWdataSet1.IDtoPhoto.Where(i => i.ProductID.ToString() == ID)
                 .Select(p => p.LargePhoto).SelectMany(b => b).ToArray();
             pictureBox1.Image=Image.FromStream(new MemoryStream(q));
-
-
-            productPhotoTableAdapter1.Fill(aWdataSet1.ProductPhoto);
-            dataGridView2.DataSource = aWdataSet1.IDtoPhoto;
-
         }
     }
 }
