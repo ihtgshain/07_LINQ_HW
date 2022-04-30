@@ -31,8 +31,7 @@ namespace Starter
 
         private void button7_Click(object sender, EventArgs e)
         {
-            var q = nwDataSet11.Products.OrderByDescending(n => n.UnitsInStock).Select(x=>x.UnitsInStock).Take(5).ToList();
-            dataGridView1.DataSource = q;
+            dataGridView1.DataSource = nwDataSet11.Products.OrderByDescending(n => n.UnitsInStock).Take(5).Select(n => new {n.UnitsInStock}).ToList();
         }
     }
 }
