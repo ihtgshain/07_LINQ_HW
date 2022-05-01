@@ -147,6 +147,7 @@ namespace MyHomeWork
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(5, 45);
@@ -156,6 +157,7 @@ namespace MyHomeWork
             this.dataGridView1.RowTemplate.Height = 74;
             this.dataGridView1.Size = new System.Drawing.Size(599, 467);
             this.dataGridView1.TabIndex = 71;
+            this.dataGridView1.DataSourceChanged += new System.EventHandler(this.dataGridView1_DataSourceChanged);
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // splitContainer2
