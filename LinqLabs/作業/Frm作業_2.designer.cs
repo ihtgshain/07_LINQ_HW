@@ -157,8 +157,7 @@ namespace MyHomeWork
             this.dataGridView1.RowTemplate.Height = 74;
             this.dataGridView1.Size = new System.Drawing.Size(599, 467);
             this.dataGridView1.TabIndex = 71;
-            this.dataGridView1.DataSourceChanged += new System.EventHandler(this.dataGridView1_DataSourceChanged);
-            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick_1);
             // 
             // splitContainer2
             // 
@@ -451,7 +450,6 @@ namespace MyHomeWork
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label7;
@@ -469,5 +467,6 @@ namespace MyHomeWork
         private System.Windows.Forms.TextBox textBox1;
         private LinqLabs.AWdataSetTableAdapters.Product1TableAdapter product1TableAdapter1;
         private LinqLabs.AWdataSetTableAdapters.IDtoPhotoTableAdapter iDtoPhotoTableAdapter1;
+        public System.Windows.Forms.ComboBox comboBox2;
     }
 }
