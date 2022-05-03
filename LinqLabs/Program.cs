@@ -29,9 +29,11 @@ namespace Starter
             //Application.Run(new FrmLangForLINQ());
             //Application.Run(new FrmLINQ架構介紹_InsideLINQ());
             //Application.Run(new FrmLINQ_To_XXX());
-            Application.Run(new FrmLinq_To_Entity());
+            //Application.Run(new FrmLinq_To_Entity());
             //Application.Run(new Frm作業_1());
             //Application.Run(new Frm作業_2());
+            Application.Run(new Frm作業_3());
+            //Application.Run(new Frm考試());
         }
     }
 }

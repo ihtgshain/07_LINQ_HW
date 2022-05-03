@@ -212,20 +212,13 @@ namespace Starter
         //todo 0502 10 join 
         private void button10_Click(object sender, EventArgs e)
         {
-            //productsTableAdapter1.Fill(nwDataSet11.Products);
-            //categoriesTableAdapter.Fill(nwDataSet11.Categories);
+            productsTableAdapter1.Fill(nwDataSet11.Products);
+            categoriesTableAdapter.Fill(nwDataSet11.Categories);
 
-            //var q = nwDataSet11.Products.GroupBy(c => c.CategoryID).Select(c => new { c.Key, Avg=c.Average(n => n.UnitPrice) }).ToList();
-            //dataGridView1.DataSource = q;
-
-            
-            //var q = this.nwDataSet11.Orders.GroupBy(o => o.OrderDate.Year, (key, g) => new { MyKey = key, MyCount = g.Count() });
-
-            var q = from p in this.nwDataSet11.Products
-                    group p by p.CategoryID into g
-                    select new { CategoryID = g.Key, MyAvg = g.Average(p => p.UnitPrice) };
-
-            this.dataGridView1.DataSource = q.ToList();
+            //g=IGroupping
+            var q = nwDataSet11.Products.GroupBy(g => g.CategoryID).
+                Select(g => new { g.Key, Avg = $"{g.Average(a => a.UnitPrice):C2}" }).ToList();
+            dataGridView1.DataSource = q;
 
             //===================
             //太T-SQL
@@ -236,8 +229,7 @@ namespace Starter
                      group p by c.CategoryName into g
                      select new { CategoryName = g.Key, MyAvg = g.Average(p => p.UnitPrice) };
 
-            this.dataGridView2.DataSource = q2.ToList();
-
+            dataGridView2.DataSource = q2.ToList();
         }
 
 
