@@ -58,6 +58,7 @@
             this.splitContainer4 = new System.Windows.Forms.SplitContainer();
             this.nwDataSet11 = new LinqLabs.NWDataSet1();
             this.productsTableAdapter1 = new LinqLabs.NWDataSet1TableAdapters.ProductsTableAdapter();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox7.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -89,15 +90,16 @@
             // 
             this.groupBox7.AutoSize = true;
             this.groupBox7.BackColor = System.Drawing.SystemColors.Control;
+            this.groupBox7.Controls.Add(this.button1);
             this.groupBox7.Controls.Add(this.label8);
             this.groupBox7.Controls.Add(this.button54);
             this.groupBox7.Controls.Add(this.button3);
             this.groupBox7.ForeColor = System.Drawing.Color.Red;
-            this.groupBox7.Location = new System.Drawing.Point(834, 539);
+            this.groupBox7.Location = new System.Drawing.Point(805, 439);
             this.groupBox7.Margin = new System.Windows.Forms.Padding(5);
             this.groupBox7.Name = "groupBox7";
             this.groupBox7.Padding = new System.Windows.Forms.Padding(5);
-            this.groupBox7.Size = new System.Drawing.Size(781, 318);
+            this.groupBox7.Size = new System.Drawing.Size(781, 266);
             this.groupBox7.TabIndex = 28;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Step 3. 執行 Query 查詢";
@@ -144,7 +146,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("新細明體", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(39, 88);
+            this.label1.Location = new System.Drawing.Point(26, 52);
             this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(94, 13);
@@ -154,7 +156,7 @@
             // button49
             // 
             this.button49.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.button49.Location = new System.Drawing.Point(44, 22);
+            this.button49.Location = new System.Drawing.Point(14, 5);
             this.button49.Margin = new System.Windows.Forms.Padding(5);
             this.button49.Name = "button49";
             this.button49.Size = new System.Drawing.Size(159, 42);
@@ -170,11 +172,11 @@
             this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.button4);
             this.groupBox1.ForeColor = System.Drawing.Color.Red;
-            this.groupBox1.Location = new System.Drawing.Point(44, 516);
+            this.groupBox1.Location = new System.Drawing.Point(14, 428);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(5);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(5);
-            this.groupBox1.Size = new System.Drawing.Size(781, 374);
+            this.groupBox1.Size = new System.Drawing.Size(781, 283);
             this.groupBox1.TabIndex = 27;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = " Step 2. 建立查詢 (定義 Linq 語法)";
@@ -183,7 +185,7 @@
             // 
             this.button7.BackColor = System.Drawing.SystemColors.Control;
             this.button7.ForeColor = System.Drawing.Color.Black;
-            this.button7.Location = new System.Drawing.Point(29, 187);
+            this.button7.Location = new System.Drawing.Point(29, 124);
             this.button7.Margin = new System.Windows.Forms.Padding(5);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(528, 61);
@@ -207,7 +209,7 @@
             // 
             this.button2.BackColor = System.Drawing.SystemColors.Control;
             this.button2.ForeColor = System.Drawing.Color.Black;
-            this.button2.Location = new System.Drawing.Point(37, 259);
+            this.button2.Location = new System.Drawing.Point(29, 195);
             this.button2.Margin = new System.Windows.Forms.Padding(5);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(523, 64);
@@ -219,10 +221,10 @@
             // 
             this.button4.BackColor = System.Drawing.SystemColors.Control;
             this.button4.ForeColor = System.Drawing.Color.Black;
-            this.button4.Location = new System.Drawing.Point(29, 99);
+            this.button4.Location = new System.Drawing.Point(29, 60);
             this.button4.Margin = new System.Windows.Forms.Padding(5);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(523, 77);
+            this.button4.Size = new System.Drawing.Size(523, 54);
             this.button4.TabIndex = 0;
             this.button4.Text = "Linq Expression  vs.  Linq Method\r\n(查詢運算式 vs. 查詢方法";
             this.button4.UseVisualStyleBackColor = false;
@@ -234,11 +236,11 @@
             this.groupBox5.Controls.Add(this.groupBox6);
             this.groupBox5.Controls.Add(this.label3);
             this.groupBox5.ForeColor = System.Drawing.Color.Red;
-            this.groupBox5.Location = new System.Drawing.Point(44, 117);
+            this.groupBox5.Location = new System.Drawing.Point(14, 70);
             this.groupBox5.Margin = new System.Windows.Forms.Padding(5);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Padding = new System.Windows.Forms.Padding(5);
-            this.groupBox5.Size = new System.Drawing.Size(1608, 386);
+            this.groupBox5.Size = new System.Drawing.Size(1608, 359);
             this.groupBox5.TabIndex = 29;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Step 1. Linq Source (定義資料來源)";
@@ -352,7 +354,7 @@
             this.listBox1.Location = new System.Drawing.Point(0, 0);
             this.listBox1.Margin = new System.Windows.Forms.Padding(5);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(503, 196);
+            this.listBox1.Size = new System.Drawing.Size(503, 186);
             this.listBox1.TabIndex = 32;
             // 
             // dataGridView1
@@ -364,7 +366,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(412, 196);
+            this.dataGridView1.Size = new System.Drawing.Size(412, 186);
             this.dataGridView1.TabIndex = 33;
             // 
             // dataGridView2
@@ -376,7 +378,7 @@
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersWidth = 62;
             this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(358, 196);
+            this.dataGridView2.Size = new System.Drawing.Size(358, 186);
             this.dataGridView2.TabIndex = 34;
             // 
             // dataGridView3
@@ -388,7 +390,7 @@
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.RowHeadersWidth = 62;
             this.dataGridView3.RowTemplate.Height = 24;
-            this.dataGridView3.Size = new System.Drawing.Size(328, 196);
+            this.dataGridView3.Size = new System.Drawing.Size(328, 186);
             this.dataGridView3.TabIndex = 35;
             // 
             // splitContainer1
@@ -405,7 +407,7 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.splitContainer3);
-            this.splitContainer1.Size = new System.Drawing.Size(1616, 196);
+            this.splitContainer1.Size = new System.Drawing.Size(1616, 186);
             this.splitContainer1.SplitterDistance = 920;
             this.splitContainer1.SplitterWidth = 5;
             this.splitContainer1.TabIndex = 36;
@@ -424,7 +426,7 @@
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.dataGridView1);
-            this.splitContainer2.Size = new System.Drawing.Size(920, 196);
+            this.splitContainer2.Size = new System.Drawing.Size(920, 186);
             this.splitContainer2.SplitterDistance = 503;
             this.splitContainer2.SplitterWidth = 5;
             this.splitContainer2.TabIndex = 0;
@@ -443,7 +445,7 @@
             // splitContainer3.Panel2
             // 
             this.splitContainer3.Panel2.Controls.Add(this.dataGridView3);
-            this.splitContainer3.Size = new System.Drawing.Size(691, 196);
+            this.splitContainer3.Size = new System.Drawing.Size(691, 186);
             this.splitContainer3.SplitterDistance = 358;
             this.splitContainer3.SplitterWidth = 5;
             this.splitContainer3.TabIndex = 0;
@@ -468,8 +470,8 @@
             this.splitContainer4.Panel2.Controls.Add(this.groupBox5);
             this.splitContainer4.Panel2.Controls.Add(this.groupBox1);
             this.splitContainer4.Panel2.Controls.Add(this.groupBox7);
-            this.splitContainer4.Size = new System.Drawing.Size(1616, 1050);
-            this.splitContainer4.SplitterDistance = 196;
+            this.splitContainer4.Size = new System.Drawing.Size(1616, 900);
+            this.splitContainer4.SplitterDistance = 186;
             this.splitContainer4.SplitterWidth = 7;
             this.splitContainer4.TabIndex = 37;
             // 
@@ -482,11 +484,25 @@
             // 
             this.productsTableAdapter1.ClearBeforeFill = true;
             // 
+            // button1
+            // 
+            this.button1.AutoSize = true;
+            this.button1.BackColor = System.Drawing.SystemColors.Control;
+            this.button1.ForeColor = System.Drawing.Color.Black;
+            this.button1.Location = new System.Drawing.Point(147, 58);
+            this.button1.Margin = new System.Windows.Forms.Padding(5);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(240, 51);
+            this.button1.TabIndex = 18;
+            this.button1.Text = "AGGR.(AVG...等)";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // FrmLINQ架構介紹_InsideLINQ
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1616, 1050);
+            this.ClientSize = new System.Drawing.Size(1616, 900);
             this.Controls.Add(this.splitContainer4);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(5);
@@ -558,6 +574,7 @@
         private System.Windows.Forms.SplitContainer splitContainer4;
         private LinqLabs.NWDataSet1 nwDataSet11;
         private LinqLabs.NWDataSet1TableAdapters.ProductsTableAdapter productsTableAdapter1;
+        private System.Windows.Forms.Button button1;
     }
 }
 
