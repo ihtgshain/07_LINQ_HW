@@ -28,6 +28,7 @@ namespace LinqLabs
                                           };
         }
 
+        NorthwindEntities db = new NorthwindEntities();
         List<Student> students_scores;
 
         public class Student
@@ -95,9 +96,40 @@ namespace LinqLabs
 
         private void button34_Click(object sender, EventArgs e)
         {
+            var q = db.Order_Details.AsEnumerable().
+                Select(y => new { Year = y.Order.OrderDate.Value.Year, Amount = y.UnitPrice * y.Quantity })
+                .GroupBy(n => n.Year).Select(g => new { Key=g.Key, Amount = $"{g.Sum(a => a.Amount):C2}" }).OrderBy(n => n.Amount);
+            
             // 年度最高銷售金額 年度最低銷售金額
+            listBox1.Items.Add("年度最高銷售金額：" + q.Last().Amount);
+            listBox1.Items.Add("年度最低銷售金額：" + q.First().Amount);
             // 那一年總銷售最好 ? 那一年總銷售最不好 ?  
+            listBox1.Items.Add("那一年總銷售最好：" + q.Last().Key);
+            listBox1.Items.Add("那一年總銷售最差：" + q.First().Key);
+
+            var q1 = db.Order_Details.AsEnumerable().
+                Select(y => new { Month = y.Order.OrderDate.Value.Year+"年"+ y.Order.OrderDate.Value.Month+"月", Amount = y.UnitPrice * y.Quantity })
+                .GroupBy(n => n.Month).Select(g => new { Key=g.Key, Amount = $"{g.Sum(a => a.Amount):C2}" }).OrderBy(n => n.Amount);
+
             // 那一個月總銷售最好 ? 那一個月總銷售最不好 ?
+            listBox1.Items.Add("那一個月總銷售最好：" + q1.Last().Key);
+            listBox1.Items.Add("那一個月總銷售最差：" + q1.First().Key);
+
+            
+            
+
+            dataGridView1.DataSource = q.ToList();
+            chart1.DataSource = null;
+            chart1.DataSource = q.ToList();
+            chart1.Series[0].XValueMember = "Key";
+            chart1.Series[0].YValueMembers = "Amount";
+            chart1.Series[0].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Column;
+            chart1.DataSource = q1.ToList();
+            chart1.Series[0].XValueMember = "Key";
+            chart1.Series[0].YValueMembers = "Amount";
+            chart1.Series[0].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Column;
+
+
 
             // 每年 總銷售分析 圖
             // 每月 總銷售分析 圖

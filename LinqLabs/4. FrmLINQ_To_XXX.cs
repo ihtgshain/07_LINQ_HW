@@ -221,7 +221,7 @@ namespace Starter
             dataGridView1.DataSource = q;
 
             //===================
-            //太T-SQL
+            //太T-SQL 不用(直接在adapter設定好，或是用Entity)
 
             var q2 = from c in this.nwDataSet11.Categories
                      join p in this.nwDataSet11.Products

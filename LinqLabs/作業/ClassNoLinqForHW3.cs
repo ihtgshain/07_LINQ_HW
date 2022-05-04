@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -19,6 +18,7 @@ namespace LinqLabs.作業
         public void Add(int n)
         {
             _nums.Add(n);
+            _nums.Sort();
         }
 
         public int this[int index]
@@ -28,12 +28,6 @@ namespace LinqLabs.作業
                 if (index < 0 || index >= _nums.Count)
                     throw new InvalidOperationException("OutOfRangeException: Index= " + index);
                 return _nums[index];
-            }
-            set
-            {
-                if (index < 0 || index >= _nums.Count)
-                    throw new InvalidOperationException("OutOfRangeException: Index= " + index);
-                _nums[index] = value;
             }
         }
         public int Count { get => _nums.Count;}
@@ -53,9 +47,7 @@ namespace LinqLabs.作業
             {
                 double temp = 0;
                 foreach (int n in _nums)
-                {
                     temp += n;
-                }
                 return Math.Round(temp / _nums.Count,2);
             }
         }
