@@ -80,7 +80,7 @@ namespace MyHomeWork
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(577, 250);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(526, 250);
             this.tableLayoutPanel2.TabIndex = 1;
             // 
             // lblDetails
@@ -92,7 +92,7 @@ namespace MyHomeWork
             this.lblDetails.Location = new System.Drawing.Point(4, 0);
             this.lblDetails.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDetails.Name = "lblDetails";
-            this.lblDetails.Size = new System.Drawing.Size(569, 40);
+            this.lblDetails.Size = new System.Drawing.Size(518, 40);
             this.lblDetails.TabIndex = 102;
             this.lblDetails.Text = "Details";
             // 
@@ -105,7 +105,7 @@ namespace MyHomeWork
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersWidth = 62;
             this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(567, 200);
+            this.dataGridView2.Size = new System.Drawing.Size(516, 200);
             this.dataGridView2.TabIndex = 100;
             // 
             // tableLayoutPanel3
@@ -121,7 +121,7 @@ namespace MyHomeWork
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(1610, 794);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(1522, 794);
             this.tableLayoutPanel3.TabIndex = 133;
             // 
             // tableLayoutPanel4
@@ -139,7 +139,7 @@ namespace MyHomeWork
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(1016, 786);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(928, 786);
             this.tableLayoutPanel4.TabIndex = 0;
             // 
             // splitContainer2
@@ -157,8 +157,8 @@ namespace MyHomeWork
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.tableLayoutPanel2);
-            this.splitContainer2.Size = new System.Drawing.Size(1008, 254);
-            this.splitContainer2.SplitterDistance = 422;
+            this.splitContainer2.Size = new System.Drawing.Size(920, 254);
+            this.splitContainer2.SplitterDistance = 385;
             this.splitContainer2.SplitterWidth = 5;
             this.splitContainer2.TabIndex = 131;
             // 
@@ -175,7 +175,7 @@ namespace MyHomeWork
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(418, 250);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(381, 250);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // lblMaster
@@ -187,7 +187,7 @@ namespace MyHomeWork
             this.lblMaster.Location = new System.Drawing.Point(4, 0);
             this.lblMaster.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblMaster.Name = "lblMaster";
-            this.lblMaster.Size = new System.Drawing.Size(410, 40);
+            this.lblMaster.Size = new System.Drawing.Size(373, 40);
             this.lblMaster.TabIndex = 101;
             this.lblMaster.Text = "Master";
             // 
@@ -200,7 +200,7 @@ namespace MyHomeWork
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(408, 200);
+            this.dataGridView1.Size = new System.Drawing.Size(371, 200);
             this.dataGridView1.TabIndex = 71;
             // 
             // treeView1
@@ -209,17 +209,18 @@ namespace MyHomeWork
             this.treeView1.Location = new System.Drawing.Point(4, 266);
             this.treeView1.Margin = new System.Windows.Forms.Padding(4);
             this.treeView1.Name = "treeView1";
-            this.treeView1.Size = new System.Drawing.Size(1008, 254);
+            this.treeView1.Size = new System.Drawing.Size(920, 254);
             this.treeView1.TabIndex = 130;
             // 
             // listBox1
             // 
             this.listBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listBox1.ForeColor = System.Drawing.Color.Red;
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 15;
             this.listBox1.Location = new System.Drawing.Point(3, 527);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(1010, 256);
+            this.listBox1.Size = new System.Drawing.Size(922, 256);
             this.listBox1.TabIndex = 132;
             // 
             // panel1
@@ -402,7 +403,7 @@ namespace MyHomeWork
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1610, 794);
+            this.ClientSize = new System.Drawing.Size(1522, 794);
             this.Controls.Add(this.tableLayoutPanel3);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
             this.Margin = new System.Windows.Forms.Padding(4);

@@ -91,6 +91,7 @@ namespace MyHomeWork
         private void button8_Click(object sender, EventArgs e)
         {
             AllClear();
+            dataGridView2.DataSource = db.Products.ToList();
 
             var q = db.Products.Where(n => n.UnitPrice != null && n.UnitPrice!=0).OrderBy(n=>n.UnitPrice)
                 .AsEnumerable().GroupBy(n => n.UnitPrice.Value.SortPrice());
@@ -111,6 +112,8 @@ namespace MyHomeWork
         private void button15_Click(object sender, EventArgs e)
         {
             AllClear();
+            dataGridView2.DataSource = db.Orders.ToList();
+
             var q = db.Orders.GroupBy(n=>n.OrderDate.Value.Year).OrderBy(n=>n.Key);
 
             dataGridView1.DataSource = q.Select(s => new { Year = s.Key, Count = s.Count() }).ToList(); ;
@@ -129,6 +132,8 @@ namespace MyHomeWork
         private void button10_Click(object sender, EventArgs e)
         {
             AllClear();
+            dataGridView2.DataSource = db.Orders.ToList();
+
             var q = db.Orders.GroupBy(n =>new { n.OrderDate.Value.Year, n.OrderDate.Value.Month }).OrderBy(n => n.Key);
 
             dataGridView1.DataSource = q.Select(s => new { Year = s.Key, Count = s.Count() }).ToList(); ;
@@ -153,6 +158,7 @@ namespace MyHomeWork
         private void button1_Click(object sender, EventArgs e)
         {
             AllClear();
+            dataGridView2.DataSource = db.Order_Details.ToList();
             dataGridView1.DataSource = db.Order_Details.AsEnumerable()
                 .Select(n => new { Name = n.Order.Employee.FirstName +" "+ n.Order.Employee.LastName, Amount = n.UnitPrice * n.Quantity })
                 .GroupBy(g => g.Name).Select(g => new { Name = g.Key, Amount = g.Sum(a => a.Amount)})
@@ -162,6 +168,7 @@ namespace MyHomeWork
         private void button9_Click(object sender, EventArgs e)
         {
             AllClear();
+            dataGridView2.DataSource = db.Products.ToList();
             dataGridView1.DataSource = db.Products.Where(n => n.UnitPrice != null && n.UnitPrice != 0)
                 .Select(c => new { CategoryName = c.Category.CategoryName, ProductName = c.ProductName, Price = c.UnitPrice })
                 .OrderByDescending(c => c.Price).Take(5).ToList();

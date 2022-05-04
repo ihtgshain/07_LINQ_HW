@@ -31,6 +31,9 @@
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.button37 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button35 = new System.Windows.Forms.Button();
@@ -40,14 +43,18 @@
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
             this.SuspendLayout();
             // 
             // button37
             // 
             this.button37.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.button37.Location = new System.Drawing.Point(60, 131);
+            this.button37.Location = new System.Drawing.Point(60, 154);
             this.button37.Margin = new System.Windows.Forms.Padding(4);
             this.button37.Name = "button37";
             this.button37.Size = new System.Drawing.Size(375, 75);
@@ -70,7 +77,7 @@
             // 
             // button35
             // 
-            this.button35.Location = new System.Drawing.Point(60, 409);
+            this.button35.Location = new System.Drawing.Point(60, 411);
             this.button35.Margin = new System.Windows.Forms.Padding(4);
             this.button35.Name = "button35";
             this.button35.Size = new System.Drawing.Size(375, 75);
@@ -93,19 +100,20 @@
             // 
             // button33
             // 
-            this.button33.Location = new System.Drawing.Point(60, 312);
+            this.button33.Location = new System.Drawing.Point(60, 324);
             this.button33.Margin = new System.Windows.Forms.Padding(4);
             this.button33.Name = "button33";
-            this.button33.Size = new System.Drawing.Size(375, 75);
+            this.button33.Size = new System.Drawing.Size(375, 79);
             this.button33.TabIndex = 137;
-            this.button33.Text = "隨機 統計 100 個學生 分數";
+            this.button33.Text = "隨機 統計 100 個學生 分數(國文成績 50~100分)";
             this.button33.UseVisualStyleBackColor = false;
             this.button33.Click += new System.EventHandler(this.button33_Click);
             // 
             // button36
             // 
             this.button36.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.button36.Location = new System.Drawing.Point(60, 33);
+            this.button36.Enabled = false;
+            this.button36.Location = new System.Drawing.Point(60, 58);
             this.button36.Margin = new System.Windows.Forms.Padding(4);
             this.button36.Name = "button36";
             this.button36.Size = new System.Drawing.Size(375, 75);
@@ -120,14 +128,15 @@
             this.chart1.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(507, 33);
+            this.chart1.Location = new System.Drawing.Point(443, 33);
             this.chart1.Margin = new System.Windows.Forms.Padding(4);
             this.chart1.Name = "chart1";
             series1.ChartArea = "ChartArea1";
+            series1.IsVisibleInLegend = false;
             series1.Legend = "Legend1";
             series1.Name = "Series1";
             this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(675, 295);
+            this.chart1.Size = new System.Drawing.Size(395, 284);
             this.chart1.TabIndex = 142;
             this.chart1.Text = "chart1";
             // 
@@ -135,25 +144,68 @@
             // 
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 15;
-            this.listBox1.Location = new System.Drawing.Point(507, 335);
+            this.listBox1.Location = new System.Drawing.Point(443, 324);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(675, 109);
+            this.listBox1.Size = new System.Drawing.Size(798, 124);
             this.listBox1.TabIndex = 143;
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(507, 476);
+            this.dataGridView1.Location = new System.Drawing.Point(443, 459);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(675, 150);
+            this.dataGridView1.Size = new System.Drawing.Size(798, 240);
             this.dataGridView1.TabIndex = 144;
+            // 
+            // chart2
+            // 
+            chartArea2.Name = "ChartArea1";
+            this.chart2.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chart2.Legends.Add(legend2);
+            this.chart2.Location = new System.Drawing.Point(846, 33);
+            this.chart2.Margin = new System.Windows.Forms.Padding(4);
+            this.chart2.Name = "chart2";
+            series2.ChartArea = "ChartArea1";
+            series2.IsVisibleInLegend = false;
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.chart2.Series.Add(series2);
+            this.chart2.Size = new System.Drawing.Size(395, 284);
+            this.chart2.TabIndex = 145;
+            this.chart2.Text = "chart2";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(60, 33);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(375, 23);
+            this.comboBox1.TabIndex = 146;
+            this.comboBox1.Text = "請先選擇搜尋項目！";
+            this.comboBox1.Click += new System.EventHandler(this.comboBox1_Click);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.button1.Location = new System.Drawing.Point(60, 229);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(375, 75);
+            this.button1.TabIndex = 147;
+            this.button1.Text = "每個學生個人成績";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Frm考試
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1264, 711);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.chart2);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.chart1);
@@ -169,6 +221,7 @@
             this.Text = "Frm考試";
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -184,5 +237,8 @@
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart2;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button button1;
     }
 }
