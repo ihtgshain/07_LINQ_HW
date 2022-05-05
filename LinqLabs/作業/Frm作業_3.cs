@@ -19,14 +19,18 @@ namespace MyHomeWork
         {
             InitializeComponent();
         }
-
+        int flag = 0;
+        ClassNoLinqForHW3 units;
+        ClassNoLinqForHW3 tens;
+        ClassNoLinqForHW3 hundreds;
         private void button4_Click(object sender, EventArgs e)
         {
             AllClear();
+            ShowDetail(1);
             int[] nums = { 50, 31, 33, 6, 9, 55, 66, 800, 200, 7 };
-            ClassNoLinqForHW3 units=new ClassNoLinqForHW3("units");
-            ClassNoLinqForHW3 tens =new ClassNoLinqForHW3("tens");
-            ClassNoLinqForHW3 hundreds =new ClassNoLinqForHW3("hundreds");
+            units=new ClassNoLinqForHW3("units");
+            tens =new ClassNoLinqForHW3("tens");
+            hundreds =new ClassNoLinqForHW3("hundreds");
 
             foreach (int n in nums)
             {
@@ -41,17 +45,36 @@ namespace MyHomeWork
 
             foreach(ClassNoLinqForHW3 c in list)
             {
-                TreeNode node = treeView1.Nodes.Add($"{c.Name} ({c.Count})");
+                TreeNode node = treeView1.Nodes.Add($"{c.Group} ({c.Count})");
                 for(int i=0;i<c.Count;i++)
                 {
                     node.Nodes.Add(c[i].ToString());
                 }
             }
         }
+        private void button38_Click(object sender, EventArgs e)
+        {
+            AllClear();
+            ShowDetail(2);
+            var q = new DirectoryInfo(@"c:\windows").GetFiles()
+                .OrderByDescending(n => n.Length).GroupBy(n => n.Length.SortLen());
 
+            dataGridView1.DataSource = q.Select(s => new { Size = s.Key, Count = s.Count() }).ToList();
+
+            var qt = q.Select(s => new { Group = s.Key, Count = s.Count(), Size = s.Select(n => n.Length.CalSize()) }).ToList();
+            foreach (var c in qt)
+            {
+                TreeNode node = treeView1.Nodes.Add($"{c.Group} ({c.Count})");
+                foreach (var n in c.Size)
+                {
+                    node.Nodes.Add(n.ToString());
+                }
+            }
+        }
         private void button6_Click(object sender, EventArgs e)
         {
             AllClear();
+            ShowDetail(3);
             var q = new DirectoryInfo(@"c:\windows").GetFiles()
                 .OrderByDescending(n => n.CreationTime.Year).GroupBy(n => n.CreationTime.Year);
             
@@ -68,29 +91,11 @@ namespace MyHomeWork
             }
         }
 
-        private void button38_Click(object sender, EventArgs e)
-        {
-            AllClear();
-            var q = new DirectoryInfo(@"c:\windows").GetFiles()
-                .OrderByDescending(n => n.Length).GroupBy(n => n.Length.SortLen());
-
-            dataGridView1.DataSource = q.Select(s => new { Size = s.Key, Count = s.Count() }).ToList();
-
-            var qt =q.Select(s => new { Group = s.Key, Count = s.Count(), Size = s.Select(n => n.Length.CalSize()) }).ToList();
-            foreach (var c in qt)
-            {
-                TreeNode node = treeView1.Nodes.Add($"{c.Group} ({c.Count})");
-                foreach (var n in c.Size)
-                {
-                    node.Nodes.Add(n.ToString());
-                }
-            }
-        }
-
         NorthwindEntities db = new NorthwindEntities();
         private void button8_Click(object sender, EventArgs e)
         {
             AllClear();
+            ShowDetail(4);
             dataGridView2.DataSource = db.Products.ToList();
 
             var q = db.Products.Where(n => n.UnitPrice != null && n.UnitPrice!=0).OrderBy(n=>n.UnitPrice)
@@ -112,6 +117,7 @@ namespace MyHomeWork
         private void button15_Click(object sender, EventArgs e)
         {
             AllClear();
+            ShowDetail(5);
             dataGridView2.DataSource = db.Orders.ToList();
 
             var q = db.Orders.GroupBy(n=>n.OrderDate.Value.Year).OrderBy(n=>n.Key);
@@ -132,9 +138,10 @@ namespace MyHomeWork
         private void button10_Click(object sender, EventArgs e)
         {
             AllClear();
+            ShowDetail(6);
             dataGridView2.DataSource = db.Orders.ToList();
 
-            var q = db.Orders.GroupBy(n =>new { n.OrderDate.Value.Year, n.OrderDate.Value.Month }).OrderBy(n => n.Key);
+            var q= db.Orders.AsEnumerable().GroupBy(n=>n.OrderDate.Value.ToString("yyyy年MM月")).OrderBy(n => n.Key);
 
             dataGridView1.DataSource = q.Select(s => new { Year = s.Key, Count = s.Count() }).ToList(); ;
 
@@ -158,6 +165,7 @@ namespace MyHomeWork
         private void button1_Click(object sender, EventArgs e)
         {
             AllClear();
+            ShowDetail(7);
             dataGridView2.DataSource = db.Order_Details.ToList();
             dataGridView1.DataSource = db.Order_Details.AsEnumerable()
                 .Select(n => new { Name = n.Order.Employee.FirstName +" "+ n.Order.Employee.LastName, Amount = n.UnitPrice * n.Quantity })
@@ -186,10 +194,70 @@ namespace MyHomeWork
             dataGridView2.DataSource = null;
             treeView1.Nodes.Clear();
             listBox1.Items.Clear();
+            flag = 0;
+            lblMaster.Text = "Master";
+        }
+        private void ShowDetail(int index)
+        {
+            lblMaster.Text = "Master   (↓點擊各項目顯示詳細內容)";
+            flag = index;
+        }
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string index = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+
+            if (flag == 1)
+            {
+                switch (index)
+                {
+                    case "UNITS":
+                        dataGridView2.DataSource = units.nums.Select(n => new { Numbers = n }).ToList();
+                        break;
+                    case "TENS":
+                        dataGridView2.DataSource = tens.nums.Select(n => new { Numbers = n }).ToList();
+                        break;
+                    case "HUNDREDS":
+                        dataGridView2.DataSource = hundreds.nums.Select(n => new { Numbers = n }).ToList();
+                        break;
+                }
+            }
+            else if (flag == 2)
+            {
+                dataGridView2.DataSource = new DirectoryInfo(@"c:\windows").GetFiles()
+                    .OrderByDescending(n => n.Length).Where(x => x.Length.SortLen() == index)
+                    .Select(s => new { FileName = s.Name, Size = s.Length.CalSize() }).ToList();
+            }
+            else if (flag == 3)
+            {
+                dataGridView2.DataSource = new DirectoryInfo(@"c:\windows").GetFiles()
+                    .Where(x => x.CreationTime.Year.ToString() == index)
+                    .Select(s => new { FileName = s.Name, CreationDate = s.CreationTime.ToString("yyyy.MM.dd") }).ToList();
+            }
+            else if (flag == 4)
+            {
+                dataGridView2.DataSource = db.Products.AsEnumerable().Where(n => (n.UnitPrice != null && n.UnitPrice != 0) && n.UnitPrice.Value.SortPrice() == index)
+                    .OrderBy(n => n.UnitPrice).Select(s => new { PriceLevel = s.UnitPrice.Value.SortPrice(), s.ProductName, Price = $"{s.UnitPrice:C2}" }).ToList();
+            }
+            else if (flag == 5)
+            {
+                dataGridView2.DataSource = db.Orders.AsEnumerable().Where(n => n.OrderDate.Value.Year.ToString() == index)
+                    .OrderBy(n => n.OrderDate.Value).Select(s => new { s.OrderDate, s.OrderID, s.Employee }).ToList();
+            }
+            else if (flag == 6)
+            {
+                dataGridView2.DataSource = db.Orders.AsEnumerable().Where(n => n.OrderDate.Value.ToString("yyyy年MM月") == index)
+                    .OrderBy(n => n.OrderDate.Value).Select(s => new { s.OrderDate, s.OrderID, s.Employee }).ToList();
+            }
+            else if (flag == 7)
+            {
+                dataGridView2.DataSource = db.Order_Details.AsEnumerable()
+                    .Where(n => n.Order.Employee.FirstName + " " + n.Order.Employee.LastName == index).OrderBy(n => n.OrderID)
+                    .Select(n => new { n.OrderID, n.UnitPrice, n.Quantity, Amount = n.UnitPrice * n.Quantity }).ToList();
+            }
         }
     }
-    
 }
+
 
 public static class MyExtensionMethod
 {
